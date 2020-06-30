@@ -1,0 +1,34 @@
+version: '3'
+services:
+  billservice:
+    container_name: billservice
+    build:
+        context: .
+        dockerfile: ./DockerFiles/DockerfileBill
+    image: billservice
+    ports:
+      - "8080:8080"
+    networks:
+        - networkecommerce
+  logisticservice:
+    container_name: logisticservice
+    build:
+        context: .
+        dockerfile: ./DockerFiles/DockerfileLogistic
+    image: logisticservice
+    ports:
+      - "8081:8080"
+    networks:
+        - networkecommerce
+  checkoutservice:
+    container_name: checkoutservice
+    build:
+        context: .
+        dockerfile: ./DockerFiles/DockerfileCheckout
+    image: checkoutservice
+    ports:
+      - "8082:8080"
+    networks:
+        - networkecommerce
+networks:
+    networkecommerce:

@@ -1,0 +1,19 @@
+FROM maven as checkoutBuilder
+
+COPY /checkout /checkoutApp
+
+RUN cd /checkoutApp && mvn package
+
+RUN mv /checkoutApp/target/checkout-0.0.1-SNAPSHOT.war /checkoutApp/target/Checkout.war
+
+FROM tomcat
+
+EXPOSE 8080
+
+COPY --from=checkoutBuilder /checkoutApp/target/Checkout.war /usr/local/tomcat/webapps/
+
+
+
+
+
+

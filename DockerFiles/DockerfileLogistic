@@ -1,0 +1,21 @@
+FROM maven as logisticBuilder
+
+COPY /logistic /logisticApp
+
+RUN cd /logisticApp && mvn package
+
+RUN mv /logisticApp/target/logistic-0.0.1-SNAPSHOT.war /logisticApp/target/Logistic.war
+
+FROM tomcat
+
+EXPOSE 8080
+
+RUN mkdir order
+
+COPY --from=logisticBuilder /logisticApp/target/Logistic.war /usr/local/tomcat/webapps/
+
+
+
+
+
+

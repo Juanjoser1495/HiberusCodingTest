@@ -1,0 +1,19 @@
+FROM maven as billBuilder
+
+COPY billService /billApp
+
+RUN cd /billApp && mvn package
+
+RUN mv /billApp/target/billService-0.0.1-SNAPSHOT.war /billApp/target/BillService.war
+
+FROM tomcat
+
+EXPOSE 8080
+
+COPY --from=billBuilder /billApp/target/BillService.war /usr/local/tomcat/webapps/
+
+
+
+
+
+
