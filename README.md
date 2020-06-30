@@ -2,7 +2,7 @@
 
 First, i see that in your test you dont specify what must to do the LogisticService so i decide to do in this service create a .txt that prints the receipt of the order and leave in a specify path. With the BillService only do the sum of all the products in the order. And checkout receive the order and do the calls to the other services.
  
-I decide separate in 3 layer, controller for the endpoints, service for each specify service and entities for the objects that i decide to use in java. 
+I decide separate in 3 layer for all the projects that are: controller for the endpoints, service for each specify service and entities for the objects that i decide to use in java. 
 
 There are another layer for the configuration but its only for swagger configuration.
 
