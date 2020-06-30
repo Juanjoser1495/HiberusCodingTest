@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "8f957ab7-aa30-48a7-962d-cf4bd190dd49",
+		"name": "TestCoding",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bill",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    [\r\n        {\r\n            \"id\":1,\r\n            \"quantity\":2,\r\n            \"cost\":231.2\r\n        },\r\n        {\r\n            \"id\":2,\r\n            \"quantity\":4,\r\n            \"cost\":3000\r\n        }\r\n    ]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://18.231.89.113:8080/BillService/getPriceProducts",
+					"protocol": "http",
+					"host": [
+						"18",
+						"231",
+						"89",
+						"113"
+					],
+					"port": "8080",
+					"path": [
+						"BillService",
+						"getPriceProducts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logistic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "priceTotal",
+						"value": "12313",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\t\t\"clientId\": 4,\r\n\t\t\"date\": \"2012-04-23T18:25:43.511Z\",\r\n\t\t\"address\": \"fakepath\",\r\n\t\t\"products\": [{\r\n\t\t\t\"id\": 1,\r\n\t\t\t\"quantity\": 2,\r\n\t\t\t\"cost\": 231.2\r\n\t\t}, {\r\n\t\t\t\"id\": 2,\r\n\t\t\t\"quantity\": 1,\r\n\t\t\t\"cost\": 300.0\r\n\t\t}]\r\n\t\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://18.231.89.113:8081/Logistic/createOrder ",
+					"protocol": "http",
+					"host": [
+						"18",
+						"231",
+						"89",
+						"113"
+					],
+					"port": "8081",
+					"path": [
+						"Logistic",
+						"createOrder "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\":2,\r\n    \"date\":\"2012-04-23T18:25:43.511Z\",\r\n    \"address\":\"fakepath\",\r\n    \"products\":[\r\n        {\r\n            \"id\":1,\r\n            \"quantity\":2,\r\n            \"cost\":231.2\r\n        },\r\n        {\r\n            \"id\":2,\r\n            \"quantity\":1,\r\n            \"cost\":30003\r\n        },\r\n        {\r\n            \"id\":23,\r\n            \"quantity\":1,\r\n            \"cost\":500\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://18.231.89.113:8082/Checkout/proccessOrder",
+					"protocol": "http",
+					"host": [
+						"18",
+						"231",
+						"89",
+						"113"
+					],
+					"port": "8082",
+					"path": [
+						"Checkout",
+						"proccessOrder"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
