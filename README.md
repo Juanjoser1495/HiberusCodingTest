@@ -13,3 +13,5 @@ Also im new in swagger so i do a basic configuration and import two libraries: s
 ¿How to build/run/use the app?
 
 To build the app the only command that you need to do is: docker-compose up -d with that command the app is gonna compile all the wars and deploy into 3 different containers so when its finish, the containers are ready to use. To run the app im gonna leave 3 postmans with petitions that i use for run the app so you can use it for test all the wars.
+
+I decide pick a DockerFile and build with maven in the dockerfile all the warse and later deploy in a tomcat server with a image of tomcat.
